@@ -82,18 +82,19 @@ public class Menu extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_food) {
+            Intent intent = new Intent(Menu.this, Food.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_bev) {
+            Intent intent = new Intent(Menu.this, Food.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_dessert) {
+            Intent intent = new Intent(Menu.this, Food.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_info) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentInfo()).commit();
+        } else if (id == R.id.nav_help) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentHelp()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
