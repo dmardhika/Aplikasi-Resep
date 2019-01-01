@@ -17,11 +17,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Menu"
-            android:label="@string/title_activity_menu"
+            android:name=".Home"
+            android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Feedback" />
-        <activity android:name=".Food"></activity>
+        <activity
+            android:name=".Food"
+            android:label="@string/title_activity_food"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Beverages"
+            android:label="@string/title_activity_beverages"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Dessert"
+            android:label="@string/title_activity_dessert"
+            android:theme="@style/AppTheme.NoActionBar" ></activity>
     </application>
 
 </manifest>

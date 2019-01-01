@@ -14,13 +14,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Food extends AppCompatActivity
+public class Dessert extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food);
+        setContentView(R.layout.activity_dessert);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -28,7 +28,7 @@ public class Food extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent launchfeedback = new Intent(Food.this, Feedback.class);
+                Intent launchfeedback = new Intent(Dessert.this, Feedback.class);
                 startActivity(launchfeedback);
             }
         });
@@ -56,7 +56,7 @@ public class Food extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.food, menu);
+        getMenuInflater().inflate(R.menu.dessert, menu);
         return true;
     }
 
@@ -82,13 +82,13 @@ public class Food extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_food) {
-            Intent intent = new Intent(Food.this, Food.class);
+            Intent intent = new Intent(Dessert.this, Food.class);
             startActivity(intent);
         } else if (id == R.id.nav_bev) {
-            Intent intent = new Intent(Food.this, Beverages.class);
+            Intent intent = new Intent(Dessert.this, Beverages.class);
             startActivity(intent);
         } else if (id == R.id.nav_dessert) {
-            Intent intent = new Intent(Food.this, Dessert.class);
+            Intent intent = new Intent(Dessert.this, Dessert.class);
             startActivity(intent);
         } else if (id == R.id.nav_info) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentInfo()).commit();

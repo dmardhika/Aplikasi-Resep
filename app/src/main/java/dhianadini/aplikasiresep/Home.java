@@ -11,16 +11,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-public class Menu extends AppCompatActivity
+public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -28,9 +28,8 @@ public class Menu extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent launchfeedback = new Intent(Menu.this, Feedback.class);
+                Intent launchfeedback = new Intent(Home.this, Feedback.class);
                 startActivity(launchfeedback);
-//                Toast.makeText(getBaseContext(), "Enter your feedback", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -54,12 +53,12 @@ public class Menu extends AppCompatActivity
         }
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu, menu);
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.home, menu);
+        return true;
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -83,13 +82,13 @@ public class Menu extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_food) {
-            Intent intent = new Intent(Menu.this, Food.class);
+            Intent intent = new Intent(Home.this, Food.class);
             startActivity(intent);
         } else if (id == R.id.nav_bev) {
-            Intent intent = new Intent(Menu.this, Food.class);
+            Intent intent = new Intent(Home.this, Beverages.class);
             startActivity(intent);
         } else if (id == R.id.nav_dessert) {
-            Intent intent = new Intent(Menu.this, Food.class);
+            Intent intent = new Intent(Home.this, Dessert.class);
             startActivity(intent);
         } else if (id == R.id.nav_info) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentInfo()).commit();
